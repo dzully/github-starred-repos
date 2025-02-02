@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button"
-import { motion } from "framer-motion"
+import { Button } from '@/components/ui/button'
+import { motion } from 'framer-motion'
 
 interface ErrorMessageProps {
   message: string
@@ -17,10 +17,15 @@ export const ErrorMessage = ({ message, onRetry }: ErrorMessageProps) => {
       <motion.div
         initial={{ scale: 0.8 }}
         animate={{ scale: 1 }}
-        transition={{ type: "spring", stiffness: 500, damping: 30 }}
+        transition={{ type: 'spring', stiffness: 500, damping: 30 }}
         className="w-16 h-16 mb-6 text-red-500"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -45,7 +50,11 @@ export const ErrorMessage = ({ message, onRetry }: ErrorMessageProps) => {
       >
         {message}
       </motion.p>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4 }}
+      >
         <Button onClick={onRetry} size="lg" className="font-semibold">
           Try again
         </Button>
@@ -53,4 +62,3 @@ export const ErrorMessage = ({ message, onRetry }: ErrorMessageProps) => {
     </motion.div>
   )
 }
-

@@ -1,9 +1,7 @@
-import { RepoList } from "@/features/repo-list"
-import { motion } from "framer-motion"
+import { RepoList } from '@/features/repo-list'
+import { motion } from 'framer-motion'
 
-type TrendingReposProps = {}
-
-export const TrendingRepos = ({}: TrendingReposProps) => {
+export const TrendingRepos = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -26,4 +24,3 @@ export const TrendingRepos = ({}: TrendingReposProps) => {
     </motion.div>
   )
 }
-

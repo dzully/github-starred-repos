@@ -18,22 +18,21 @@ export interface GithubSearchResponse {
 export const fetchGithubRepos = async (page = 1): Promise<GithubRepo[]> => {
   const date = new Date()
   date.setDate(date.getDate() - 10)
-  const formattedDate = date.toISOString().split("T")[0]
+  const formattedDate = date.toISOString().split('T')[0]
 
   const response = await fetch(
     `https://api.github.com/search/repositories?q=created:>${formattedDate}&sort=stars&order=desc&page=${page}`,
     {
       headers: {
-        Accept: "application/vnd.github.v3+json",
+        Accept: 'application/vnd.github.v3+json',
       },
-    },
+    }
   )
 
   if (!response.ok) {
-    throw new Error("Failed to fetch repos")
+    throw new Error('Failed to fetch repos')
   }
 
   const data = (await response.json()) as GithubSearchResponse
   return data.items
 }
-
